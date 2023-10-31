@@ -1,0 +1,86 @@
+He ran the make direct first
+
+Terminal -> virtual display
+term.c -> simple ways to  ontrol our Terminal
+shell.c -> input processing
+
+Intention : Understand Virtual memory
+Understand memory hierarchy
+
+Malloc -> virtual memory , kernel will do the address translation and all
+
+We want to allocate memory and we dont want it to map to physical address( thats what kernel does)
+
+We rather want to create mapping to file and memory
+memory map IO , Kernel will map to the file too
+
+We opened the big file -> We map the file to memory 
+
+No need to serialize and deserialize , we already have file written to memory
+Kernel will take care of loading and stuff
+
+Advantages : File will be persistent
+
+Byte addressible code store vs Block Addressible code store
+
+AVL -> Tree 
+Term.c -> 
+
+We read and write terminal , we can send special msgs , just like html , some special tags type for decorating stuff?, Color , bold and cool stuff
+
+Shell -> Read things at char level , and read special chars
+
+Run it 
+-> make
+-> ./cs238 + we need to give a file 
+dd = if=dev/zero of=file bs=4096 count=100000
+
+File will be created of size 41MB
+
+ls -l file, we'll get the file
+
+Run the program now 
+./cs238 --truncate  file
+*********************************************************
+MAPPED REGION
+UNMAPPED REGIONSCM REGION 
+**********************************************************
+
+CS238P-> 
+
+Description 
+    Mapped Region : All Virtual space availavle
+    Unmapped region :
+    SCM Region : 
+
+We can type help 
+CS238P -> help
+    info
+
+    We are gonna use this AVL to store words
+    GOnna use unique words
+    utilized : How muich memory has been utilized
+    capacity: Total capacity
+
+insert -> allows to manually add a words
+CS238P -> insert hello ( No "" , just normal insert hello)
+CS238P-> info 
+            -- info --
+                words : 1
+                words: 1 (unique)
+                utilized: 70 bytes
+                capacity: 40K or something
+
+We can load a file 
+load main.c
+We can do ctrl + l -> clear screen
+info 
+211
+140
+9315
+40K
+
+quit is for exit
+
+We quit and we type info again, we need to have those file data again, file data shouldnt vanish
+
