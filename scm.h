@@ -19,7 +19,7 @@ struct scm;
  * backing device, opening the regsion for memory allocation activities.
  *
  * pathname: the file pathname of the backing device
- * truncate: if non-zero, truncates the SCM region, clearning all data
+ * truncate: if non-zero, truncates the SCM region, clearing all data
  *
  * return: an opaque handle or NULL on error
  */
@@ -56,7 +56,7 @@ void *scm_malloc(struct scm *scm, size_t n);
  * return: the base memory address of the duplicated C string or NULL on error
  */
 
-char *scm_strdup(struct scm *scm, const char *s); // Get string value , get mallc and return new string addr
+char *scm_strdup(struct scm *scm, const char *s);
 
 /**
  * Analogous to the standard C free function, but using SCM region.
@@ -65,7 +65,7 @@ char *scm_strdup(struct scm *scm, const char *s); // Get string value , get mall
  * p  : a pointer to the start of a previously allocated memory
  */
 
-void scm_free(struct scm *scm, void *p); // Not needed , but can implment
+void scm_free(struct scm *scm, void *p);
 
 /**
  * Returns the number of SCM bytes utilized thus far.
@@ -88,7 +88,7 @@ size_t scm_utilized(const struct scm *scm);
 size_t scm_capacity(const struct scm *scm);
 
 /**
- * Returns the base memory address withn the SCM region, i.e., the memory
+ * Returns the base memory address within the SCM region, i.e., the memory
  * pointer that would have been returned by the first call to scm_malloc()
  * after a truncated initialization.
  *
@@ -97,6 +97,6 @@ size_t scm_capacity(const struct scm *scm);
  * return: the base memory address within the SCM region
  */
 
-void *scm_mbase(struct scm *scm); /* Root address */
+void *scm_mbase(struct scm *scm);
 
 #endif /* _SCM_H_ */
